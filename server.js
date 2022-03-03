@@ -12,9 +12,16 @@ const app = express();
 //middlewares
 app.use(express.static(staticPath));
 
+//routes
+
 //home
 app.get("/", (req, res) => {
     res.sendFile(path.join(staticPath, "index.html"));
+})
+
+//signup
+app.get("/signup", (req, res) =>{
+    res.sendFile(path.join(staticPath, "signup.html"));
 })
 
 //404

@@ -127,6 +127,11 @@
     color: #fff;
 }
 
+.bag-btn:hover{
+    opacity: 0.95;
+}
+
+
 .wishlist-btn{
     width: 32%;
 
