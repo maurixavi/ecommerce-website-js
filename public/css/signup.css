@@ -14,15 +14,6 @@ body{
     font-family: 'roboto', sans-serif;
 }
 
-.loader{
-    width: 320px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
-}
-
 .logo{
     height: 80px;
     display: block;
@@ -42,16 +33,29 @@ input[type="email"]{
     border: none;
     outline: none;
     margin: 20px 0;
-    text-transform: capitalize;
     color: #383838;
     font-size: 14px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.01);
     font-family: 'roboto', sans-serif;
 }
 
+
 ::placeholder{
     color: #383838;
+    opacity: 0.8;
+    font-style: italic;
 }
+
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover{
+    border: 1px solid #d1d1d1;
+    /*font-style: italic;*/
+
+  
+}
+
 
 .submit-btn{
     display: block;
@@ -68,7 +72,7 @@ input[type="email"]{
     font-size: 14px;
     /*box-shadow: 0 4px 10px rgba(0, 0, 0, 0.01);*/
     font-family: 'roboto', sans-serif;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .submit-btn:hover{
@@ -119,10 +123,75 @@ input[type="email"]{
 }
 
 label{
-    text-transform: capitalize;
     display: inline-block;
     margin-bottom: 10px;
-    font-size: 14px;
+    font-size: 13px;
     color: #383838;
+    opacity: 0.9;
 
+}
+
+label{
+    color: #383838;
+}
+
+.link{
+    color: #383838;
+    text-align: center;
+    display: block;
+    opacity: 0.9;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+
+/* loader */
+.loader{
+    width: 320px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+
+/* alert message */
+.alert-box{
+    width: 280px;
+    min-height: 100px;
+    background: #e24c4b;
+    border-radius: 10px;
+    box-shadow: 0 5px 100px rgba(0, 0, 0, 0.05);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+
+    transition: 1s;
+    z-index: 9;
+}
+
+.alert-box.show{
+    opacity: 1;
+    pointer-events: all;
+    top: 50%;
+}
+
+.alert-img{
+    display: block;
+    margin: 0px auto 10px;
+    height: 45px;
+
+}
+
+.alert-msg{
+    color: #fff;
+    font-size: 14px;
+    text-align: center;   
+    line-height: 16px;
+    font-weight: 500;
 }
