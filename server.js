@@ -1,19 +1,38 @@
+const PORT = 5501
+
 const express = require('express');
 const admin = require('firebase-admin');
 const bcrypt = require('bcrypt');
 const path = require('path');
 
-const PORT = 5501
+const cors = require('cors');
+
+const config = {
+    application: {
+        cors: {
+            server: [
+                {
+                    origin: "localhost:5501", //servidor que deseas que consuma o (*) en caso que sea acceso libre
+                    credentials: true
+                }
+            ]
+        }
+    }
+}
 
 let staticPath = path.join(__dirname, "public");
 
 const app = express();
 
-//middlewares
+//Middlewares
 app.use(express.static(staticPath));
-//app.use(express.json());
+app.use(express.json());
 
-//routes
+
+app.use(cors(config.application.cors.server));
+
+
+//Routes
 
 //home
 app.get("/", (req, res) => {
@@ -26,11 +45,10 @@ app.get("/signup", (req, res) => {
     res.sendFile(path.join(staticPath, "signup.html"));
 })
 
-/*
-app.post('/signup', (req, res) => {
+app.post("/signup", (req, res) => {
     console.log(req.body);
     res.json('data received')
-})*/
+})
 
 //404
 app.get("/404", (req, res) => {

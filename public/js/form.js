@@ -32,29 +32,33 @@ submitBtn.addEventListener('click', () => {
     } else {
         //submit form
         loader.style.display = 'block';
-        /*sendData('/signup', {
+        sendData('/signup', {
             name: name.value,
             email: email.value,
             password: password.value,
-            number = number.value,
+            number: number.value,
             terms: terms.checked,
             notification: notification.checked,
             seller: false
-        })*/
+        })
     }
 })
 
 //send data
-/*const sendData = (path, data) => {
+const sendData = (path, data) => {
     fetch(path, {
-        method: 'post',
-        headers: new Headers({'Content-Type': 'aplication/json'}),
+        method: 'POST',
+        mode: 'cors',
+        /*headers: {
+            'Content-Type': 'application/json'
+          },*/
+        headers: new Headers({'Content-Type': 'application/json'}),
         body: JSON.stringify(data)
     }).then((res) => res.json())
-    .then(response => {
-        console.log(response);
+    .then(res => {
+        console.log(res);
     })
-}*/
+}
 
 
 //alert function
