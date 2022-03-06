@@ -14,20 +14,6 @@ admin.initializeApp({
 
 let db = admin.firestore();
 
-/*const cors = require('cors');
-
-const config = {
-    application: {
-        cors: {
-            server: [
-                {
-                    origin: "localhost:5501", //servidor que deseas que consuma o (*) en caso que sea acceso libre
-                    credentials: true
-                }
-            ]
-        }
-    }
-}*/
 
 let staticPath = path.join(__dirname, "public");
 
@@ -76,16 +62,17 @@ app.post("/signup", (req, res) => {
     } else if (!terms) {
         return res.json({'alert': 'You must agree to our Terms & Conditions'});
     } 
-    
+
     //store user in db
     db.collection('users').doc(email).get()
     .then(user => {
         if(user.exists){
-            return res.json({'alert': 'email already exists'});
+            return res.json({'alert': 'Email already exists'});
         } else{
             //encrypt the password before storing it
             bcrypt.genSalt(10, (err, salt) => {
-                bcrypt.hash(password, salt, (err, hash) =>{
+                bcrypt.hash(password, salt, (err, hash) => {
+                    // store hash in password DB
                     req.body.password = hash;
                     db.collection('users').doc(email).set(req.body)
                     .then(data => {
@@ -100,7 +87,6 @@ app.post("/signup", (req, res) => {
         }
     })
 
-    
     //res.json('data received');
 })
 

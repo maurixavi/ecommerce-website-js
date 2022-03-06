@@ -66,7 +66,11 @@ const processData = (data) => {
     if (data.alert){
         showAlert(data.alert);
     } else if(data.name){
-        console.log(data)
+        //console.log(data)
+        //Create authToken
+        data.authToken = generateToken(data.email);
+        sessionStorage.user = JSON.stringify(data);
+        location.replace('/');
     }
 }
 
