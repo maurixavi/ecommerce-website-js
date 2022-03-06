@@ -74,6 +74,7 @@ const processData = (data) => {
     }
 }
 
+
 //alert function
 const showAlert = (msg) => {
     let alertBox = document.querySelector('.alert-box');

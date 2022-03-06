@@ -24,9 +24,6 @@ app.use(express.static(staticPath));
 app.use(express.json());
 
 
-//app.use(cors(config.application.cors.server));
-
-
 //Routes
 
 //home

@@ -12,6 +12,7 @@ const generateToken = (key) => {
     return token;
 }
 
+
 const compareToken = (token, key) => {
     let string = '';
     for(let i = 0; i < key.length; i=i+2){
