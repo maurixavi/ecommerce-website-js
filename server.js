@@ -123,7 +123,10 @@ app.post("/login", (req, res) => {
     })
 })
 
-
+//seller
+app.get("/seller", (req, res) => {
+    res.sendFile(path.join(staticPath, "seller.html"));  
+})
 
 
 

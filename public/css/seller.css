@@ -1,0 +1,53 @@
+body{
+    width: 100%;
+    display: block;
+    min-height: auto;
+    padding: 0 5vw;
+    position: relative;
+    font-family: roboto, sans-serif;
+}
+
+
+.logo{
+    margin: 20px auto 30px;
+}
+
+/* become seller element */
+.become-seller{
+    width: 70%;
+    margin: 10px auto 10px;
+    border-radius: 4px;
+    background: #fff;
+    padding: 30px;
+}
+
+.heading{
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.desc{
+    margin: 20px 0;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+
+.btn{
+    background: #383838;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 2px 14px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 36px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn:hover{
+    opacity: 0.95;
+}
+
+
